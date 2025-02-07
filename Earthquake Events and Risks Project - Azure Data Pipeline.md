@@ -20,7 +20,7 @@ Afterwards I reviewed and created the resource.
 
 While the resource getting ready to deploy, I created a **storage account** to create my three **data containers “bronze, silver and gold”**  and also added a role assignment for access to the containers. 
 
-## 2. Create and setup storage while setting up synapse analytics.
+## 2. Create and setup storage
 
 In the basics tab → 
 
@@ -64,29 +64,6 @@ Overview →
 
 **Bronze layer** being **raw data for cleaning**, **silver layer** being the placeholder for that **clean data** and **finding the information we need for the business case** before moving that clean data to the **gold layer.**
 
-### Setting up synapse analytics:
-
-*Synapse can take a while to deploy and setup so I did this just after I created my storage containers.*
-
-I headed over to **synapse analytics** in azure portal and created a workspace. 
-
-Choose my **storage account** I made earlier then **created a file system for data lake storage** called “synapse-fs” and assigned myself **RBAC** for the **Storage Blob Data Contributor** 
-
-Afterwards I reviewed and created the workspace. 
-
-![image.png](image%2015.png)
-
-In the security tab I selected only Entra ID for the authentication method.
-
-![image.png](image%2016.png)
-
-Then I created and waited for the workspace to deploy. 
-
-![image.png](image%2017.png)
-
-![image.png](image%2018.png)
-
-While waiting for that workspace to finish deploying, I went back to data bricks to start configurating the resource. 
 
 ## 3. Databricks configuration:
 
