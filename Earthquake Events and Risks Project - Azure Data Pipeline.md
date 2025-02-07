@@ -32,35 +32,35 @@ On the advanced tab I **enabled hierarchical namespace** →
 
 Afterwards I reviewed and created the storage account. 
 
-![image.png](image%205.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%205.png?raw=true)
 
 Again I waited for the resource to deploy. 
 
-![image.png](image%206.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%206.png?raw=true)
 
-![image.png](image%207.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%207.png?raw=true)
 
 *I also have another resource group managed by databricks when I created my databricks resource.* 
 
-![image.png](image%208.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%208.png?raw=true)
 
 After the my storage account was created and deployed. I went into the containers tab on my storage account resource (on the left) 
 
-![image.png](image%209.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%209.png?raw=true)
 
-![image.png](image%2010.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2010.png?raw=true)
 
 So here is where I created my bronze, silver gold container, by creating them one by one →
 
-![image.png](image%2011.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2011.png?raw=true)
 
-![image.png](image%2012.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2012.png?raw=true)
 
-![image.png](image%2013.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2013.png?raw=true)
 
 Overview → 
 
-![image.png](image%2014.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2014.png?raw=true)
 
 **Bronze layer** being **raw data for cleaning**, **silver layer** being the placeholder for that **clean data** and **finding the information we need for the business case** before moving that clean data to the **gold layer.**
 
@@ -69,13 +69,13 @@ Overview →
 
 First I launched a workspace and started a **compute** instance which took a few minutes. 
 
-![image.png](image%2019.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2019.png?raw=true)
 
 On the compute config, I selected single node, **unchecked Photon Acceleration** and choose the smallest node type which is **general purpose Standard_DS3-v2 (14 GB, 4 Cores).**
 
 Set the self-**termination** of the node after **30 minutes** to be safe, just so any reason I am absent. Also it takes round 15 mins to spin up the Databricks cluster anyway, so lower than 25 mins is a risk. When I’ve done I clicked create compute then waited for the cluster to be created. 
 
-![image.png](image%2020.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2020.png?raw=true)
 
 While the cluster is being created, I’d further configured my databricks resource by first creating a credential. 
 
@@ -83,7 +83,7 @@ While the cluster is being created, I’d further configured my databricks resou
 
 *Usually there is a credential there for default, but that is for the pipeline itself.* 
 
-![image.png](image%2021.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2021.png?raw=true)
 
 I created a new credential for authentication on the storage account and Databricks cluster. 
 
@@ -99,29 +99,29 @@ Name of connector in this case is:
 
 method 1: Search bar lookup 
 
-![image.png](image%2022.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2022.png?raw=true)
 
-![image.png](image%2023.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2023.png?raw=true)
 
 method 2: Located on Databricks resource, go inside the link access it in the list below. 
 
-![image.png](image%2024.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2024.png?raw=true)
 
-![image.png](image%2025.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2025.png?raw=true)
 
-![image.png](image%2026.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2026.png?raw=true)
 
 Once the id is copied to the clipboard, I paste it in the access connector id box inside the credential config.
 
 Then I click create and noticed I now have two credentials, one of managed identity owned by Databricks and one owned by myself. 
 
-![image.png](image%2027.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2027.png?raw=true)
 
 I wanted to use the credential for external locations 
 
 **Catalog > External Data > External Locations > Create External location** 
 
-![image.png](image%2028.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2028.png?raw=true)
 
 Created bronze, silver and gold external location. Each location must have a endpoint, to later access each container. 
 
@@ -129,7 +129,7 @@ Usually I write my URL in the comment section or on a notepad first to then past
 
 I did this for silver and gold too. 
 
-![image.png](image%2029.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2029.png?raw=true)
 
 Once I clicked create, I came up against a error.
 
@@ -137,7 +137,7 @@ This is because my container is currently empty.
 
 So I selected **force update for all three of them**
 
-![image.png](image%2030.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2030.png?raw=true)
 
 Overview once locations are created. 
 
