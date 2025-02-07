@@ -14,9 +14,9 @@ Afterwards I reviewed and created the resource.
 
 ![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%201.png?raw=true)
 
-![image.png](image%201.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%202.png?raw=true)
 
-![image.png](image%202.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%203.png?raw=true)
 
 While the resource getting ready to deploy, I created a **storage account** to create my three **data containers “bronze, silver and gold”**  and also added a role assignment for access to the containers. 
 
