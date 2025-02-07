@@ -12,7 +12,7 @@ This is a personal project so I choose **premium pricing tier** for my Databrick
 
 Afterwards I reviewed and created the resource. 
 
-![image.png](image.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%201.png?raw=true)
 
 ![image.png](image%201.png)
 
