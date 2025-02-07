@@ -28,7 +28,7 @@ In the basics tab →
 
 On the advanced tab I **enabled hierarchical namespace** → 
 
-![image.png](image%204.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%204.png?raw=true)
 
 Afterwards I reviewed and created the storage account. 
 
