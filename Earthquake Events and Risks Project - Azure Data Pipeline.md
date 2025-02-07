@@ -24,7 +24,7 @@ While the resource getting ready to deploy, I created a **storage account** to c
 
 In the basics tab → 
 
-![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%204.png?raw=true)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%203.png?raw=true)
 
 On the advanced tab I **enabled hierarchical namespace** → 
 
