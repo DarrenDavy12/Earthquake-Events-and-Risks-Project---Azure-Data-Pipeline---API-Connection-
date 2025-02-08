@@ -24,6 +24,7 @@ While the resource getting ready to deploy, I created a **storage account** to c
 
 
 
+
 ## 2. Create and setup storage
 
 In the basics tab → 
@@ -63,11 +64,13 @@ So here is where I created my bronze, silver gold container, by creating them on
 ![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2013.png?raw=true)
 
 
+
 Overview → 
 
 ![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2014.png?raw=true)
 
 **Bronze layer** being **raw data for cleaning**, **silver layer** being the placeholder for that **clean data** and **finding the information we need for the business case** before moving that clean data to the **gold layer.**
+
 
 
 
@@ -231,6 +234,8 @@ Silver container inside my created storage account is no longer empty and now ho
 ![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2048.png?raw=true)
 
 
+
+
 ### **Install Required Libraries:**
 
 **Gold** Notebook: Aggregated and enriched data tailored to specific business needs, such as adding in country codes.
@@ -269,6 +274,7 @@ I went back to the **Gold** notebook and ran the cell including the “reverse_g
 Gold container inside my created storage account is no longer empty and now holds the data.
 
 ![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2057.png?raw=true)
+
 
 
 
