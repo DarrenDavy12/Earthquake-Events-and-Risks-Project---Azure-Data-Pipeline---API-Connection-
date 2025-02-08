@@ -4,6 +4,8 @@
 
 Ingested data using python within Databricks, to get it from a API endpoint into a bronze layer of an medallion architecture. Azure data lake storage container within a storage account. Then used Databricks to transform the raw data from bronze container into a silver container and then to the gold container to be used directly for business use. I have then brought these notebooks into Azure Data Factory, extracted variables out of the notebook into Data factory and orchestrated the pipeline from Data factory as well. 
 
+
+
 ## 1. Create databricks resource:
 
 In Azure I made a Databricks workspace along with a resource group. 
@@ -19,6 +21,8 @@ Afterwards I reviewed and created the resource.
 ![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%202.png?raw=true)
 
 While the resource getting ready to deploy, I created a **storage account** to create my three **data containers “bronze, silver and gold”**  and also added a role assignment for access to the containers. 
+
+
 
 ## 2. Create and setup storage
 
@@ -58,11 +62,13 @@ So here is where I created my bronze, silver gold container, by creating them on
 
 ![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2013.png?raw=true)
 
+
 Overview → 
 
 ![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2014.png?raw=true)
 
 **Bronze layer** being **raw data for cleaning**, **silver layer** being the placeholder for that **clean data** and **finding the information we need for the business case** before moving that clean data to the **gold layer.**
+
 
 
 ## 3. Databricks configuration:
@@ -143,6 +149,8 @@ Overview once locations are created.
 
 ![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2031.png?raw=true)
 
+
+
 ## 4. Create and execute Notebooks
 
 So I head over to my storage account “earthquakedata” and go into **Access Control (IAM) > Role Assignments** 
@@ -162,6 +170,7 @@ Finally pasting in the resource id from me Databricks connector I used earlier i
 ![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2034.png?raw=true)
 
 ![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2035.png?raw=true)
+
 
 Overview 
 
@@ -221,6 +230,7 @@ Silver container inside my created storage account is no longer empty and now ho
 
 ![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2048.png?raw=true)
 
+
 ### **Install Required Libraries:**
 
 **Gold** Notebook: Aggregated and enriched data tailored to specific business needs, such as adding in country codes.
@@ -245,6 +255,7 @@ I went back to the **Gold** notebook and ran the cell including the “reverse_g
 
 ![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2052.png?raw=true)
 
+
 **Gold** notebook overview: 
 
 ![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2053.png?raw=true)
@@ -258,6 +269,8 @@ I went back to the **Gold** notebook and ran the cell including the “reverse_g
 Gold container inside my created storage account is no longer empty and now holds the data.
 
 ![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2057.png?raw=true)
+
+
 
 ## 5. **Set Up Azure Data Factory (ADF)**
 
@@ -307,6 +320,7 @@ Renaming the notebook to “Bronze Notebook” in the general tab.
 
 On the Azure Databricks tab, I created a linked service with the configuration of “**AutoResolveIntegrationRuntime” and I was recommended to store the token in “Azure Key Vault” for security reasons.** 
 
+
 **Linked service config:** 
 
 Name of linked service: **AzureDatabricks1**
@@ -324,6 +338,7 @@ Choose existing cluster: **[account_name] cluster**
 I wanted a single access point for this project so I used a “access token”
 
 *If I did use key vault I would need to assign my **IAM access identity** to assign a role (**secret officer role or secret user role**) to connect key vault to data factory.* 
+
 
 **Location of access token:**
 
