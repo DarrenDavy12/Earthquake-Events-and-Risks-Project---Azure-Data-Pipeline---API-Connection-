@@ -141,7 +141,7 @@ So I selected **force update for all three of them**
 
 Overview once locations are created. 
 
-![image.png](image%2031.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2031.png?raw=true)
 
 ## 4. Create and execute Notebooks
 
@@ -149,25 +149,25 @@ So I head over to my storage account “earthquakedata” and go into **Access C
 
 I added a new Role Assignment 
 
-![image.png](image%2032.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2032.png?raw=true)
 
 Searched and selected the “**storage blob contributor**” role. This role allows me to read, write and delete access to blob containers and data.
 
-![image.png](image%2033.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2033.png?raw=true)
 
 On the next page called “**members**”, **I assigned access to managed identity** and added my access connector for Databricks “**unity-catalog-access-connector**”  as my selected member. 
 
 Finally pasting in the resource id from me Databricks connector I used earlier in the select box. 
 
-![image.png](image%2034.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2034.png?raw=true)
 
-![image.png](image%2035.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2035.png?raw=true)
 
 Overview 
 
 Then I clicked review and assign. 
 
-![image.png](image%2036.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2036.png?raw=true)
 
 I now have two-communication with my storage account and Databricks.
 
@@ -177,9 +177,9 @@ Adding the relevant python code for the **bronze** notebook.
 
 So I hit create new notebook 
 
-![image.png](image%2037.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2037.png?raw=true)
 
-![image.png](image%2038.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2038.png?raw=true)
 
 *Plus Note:* 
 
@@ -189,7 +189,7 @@ Fetched the API for earthquakes events from this site:
 
 This will give all the information about the earthquakes seismic events. I added this to the URL variable inside the notebooks. This where the GET request will fetch the data from. 
 
-![image.png](image%2039.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2039.png?raw=true)
 
 For each notebook I am them running isolated blocks. 
 
@@ -197,35 +197,35 @@ For each notebook I am them running isolated blocks.
 
 Raw data ingested directly from the API, stored in Parquet format for future reprocessing if needed.
 
-![image.png](image%2040.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2040.png?raw=true)
 
-![image.png](image%2041.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2041.png?raw=true)
 
-![image.png](image%2042.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2042.png?raw=true)
 
 **Silver** Notebook: 
 
 Cleaned and normalized data, removing duplicates and handling missing values, ensuring it’s ready for analytics.
 
-![image.png](image%2043.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2043.png?raw=true)
 
-![image.png](image%2044.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2044.png?raw=true)
 
-![image.png](image%2045.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2045.png?raw=true)
 
-![image.png](image%2046.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2046.png?raw=true)
 
-![image.png](image%2047.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2047.png?raw=true)
 
 Silver container inside my created storage account is no longer empty and now holds the data.
 
-![image.png](image%2048.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2048.png?raw=true)
 
 ### **Install Required Libraries:**
 
 **Gold** Notebook: Aggregated and enriched data tailored to specific business needs, such as adding in country codes.
 
-![image.png](image%2049.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2049.png?raw=true)
 
 I wanted to add the “reverse_geocoder” pypi package, so in 
 
@@ -235,35 +235,35 @@ I selected “pypi” package because I am work with python code, typed “rever
 
 Usually I wait 5 or so minutes for the package to be installed.  
 
-![image.png](image%2050.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2050.png?raw=true)
 
 Once done 
 
-![image.png](image%2051.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2051.png?raw=true)
 
 I went back to the **Gold** notebook and ran the cell including the “reverse_geocoder” package. 
 
-![image.png](image%2052.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2052.png?raw=true)
 
 **Gold** notebook overview: 
 
-![image.png](image%2053.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2053.png?raw=true)
 
-![image.png](image%2054.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2054.png?raw=true)
 
-![image.png](image%2055.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2055.png?raw=true)
 
-![image.png](image%2056.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2056.png?raw=true)
 
 Gold container inside my created storage account is no longer empty and now holds the data.
 
-![image.png](image%2057.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2057.png?raw=true)
 
 ## 5. **Set Up Azure Data Factory (ADF)**
 
 Afterwards, I headed over to Data factories. 
 
-![image.png](image%2058.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2058.png?raw=true)
 
 I created a new data factory 
 
@@ -279,9 +279,9 @@ Version: **V2**
 
 Then I clicked review + create and create again after that. 
 
-![image.png](image%2059.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2059.png?raw=true)
 
-![image.png](image%2060.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2060.png?raw=true)
 
 I am using data factory to run the python notebooks automatically based on triggers. 
 
@@ -289,19 +289,19 @@ I am using data factory to run the python notebooks automatically based on trigg
 
 After the resource is deployed, I click “launch studio”
 
-![image.png](image%2061.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2061.png?raw=true)
 
-![image.png](image%2062.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2062.png?raw=true)
 
 In the author tab on the left, this where I created the pipeline. 
 
-![image.png](image%2063.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2063.png?raw=true)
 
 Dragged and dropped notebook onto the canvas. 
 
 Renaming the notebook to “Bronze Notebook” in the general tab.
 
-![image.png](image%2064.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2064.png?raw=true)
 
 ***Plus Note:** Data factory communicates with Databricks not the storage account, but Databricks communicates with both.*  
 
@@ -329,31 +329,31 @@ I wanted a single access point for this project so I used a “access token”
 
 **Azure databricks > Profile icon > Settings > Developer > access tokens (manage) > generate new token**
 
-![image.png](image%2065.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2065.png?raw=true)
 
-![image.png](image%2066.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2066.png?raw=true)
 
 Created the token and pasted it into the access token box back inside my data factory link service. 
 
-![image.png](image%2067.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2067.png?raw=true)
 
 **Overview of new linked service:** 
 
-![image.png](image%2068.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2068.png?raw=true)
 
 Tested the connection for validation and the connection was successful: 
 
-![image.png](image%2069.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2069.png?raw=true)
 
 Next on the **settings tab > browse > users > [my outlook email] > Bronze Notebook**
 
 Then I clicked “Ok”
 
-![image.png](image%2070.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2070.png?raw=true)
 
 Cloned two more notebooks on the canvas. So I had three in total and rename two. One called Silver Notebook and the other Gold Notebook. 
 
-![image.png](image%2071.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2071.png?raw=true)
 
 Then I changed the settings for both silver and gold notebook and set the corresponding folders: 
 
@@ -361,7 +361,7 @@ Then I changed the settings for both silver and gold notebook and set the corres
 
 **settings tab > browse > users > [my outlook email] > Silver Notebook** 
 
-![image.png](image%2072.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2072.png?raw=true)
 
 and 
 
@@ -369,25 +369,25 @@ and
 
 **settings tab > browse > users > [my outlook email] > Gold Notebook** 
 
-![image.png](image%2073.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2073.png?raw=true)
 
 Once that was done, I connected the notebooks on the canvas using the “**On Success**” connector (green arrows) 
 
-![image.png](image%2074.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2074.png?raw=true)
 
 I **validated** and **debugged** the pipeline for any errors and it was successful. 😎
 
-![image.png](image%2075.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2075.png?raw=true)
 
-![image.png](image%2076.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2076.png?raw=true)
 
 Then I **published** the pipeline in order to add a trigger. 
 
-![image.png](image%2077.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2077.png?raw=true)
 
 Clicked **publish** at the bottom. 
 
-![image.png](image%2078.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2078.png?raw=true)
 
 Then I past variables from one notebook to another. 
 
@@ -400,7 +400,7 @@ dbutils.widgets.text("end_date", "")
 start_date = dbutils.widgets.get("start_date")
 end_date = dbutils.widgets.get("end_date")`
 
-![image.png](image%2079.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2079.png?raw=true)
 
 I went back data factory and added two **base parameters**
 
@@ -414,7 +414,7 @@ The **dynamic content** is for start_date is:
 
 `@formatDateTime(addDays(utcnow(), -1), 'yyyy-MM-dd')`
 
-![image.png](image%2080.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2080.png?raw=true)
 
 The **dynamic content** is for end_date is: 
 
