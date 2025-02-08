@@ -441,11 +441,11 @@ The **dynamic content** is for end_date is:
 
 `@formatDateTime(utcnow(), 'yyyy-MM-dd')`
 
-![image.png](image%2081.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2081.png?raw=true)
 
 Overview of **bronze** parameters: 
 
-![image.png](image%2082.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2082.png?raw=true)
 
 Both start_date and end_date now have base parameters on the bronze notebook.
 
@@ -453,61 +453,61 @@ I headed back to bronze notebook in Databricks and add another cell at the botto
 
 **Bronze** Notebook: 
 
-![image.png](image%2083.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2083.png?raw=true)
 
 Back in the **silver** notebook I removed this cell of code. 
 
-![image.png](image%2084.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2084.png?raw=true)
 
 Replaced that code with 
 
-![image.png](image%2085.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2085.png?raw=true)
 
 Along with adding a output at the bottom 
 
-![image.png](image%2086.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2086.png?raw=true)
 
 And on the **gold** notebook, I replaced this
 
-![image.png](image%2087.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2087.png?raw=true)
 
 With this, allowing the Databricks to get the parameters from Data factory. 
 
-![image.png](image%2088.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2088.png?raw=true)
 
 Back in Data factory, I add parameters for the **silver** notebook and the **gold** notebook. 
 
 In the silver notebook parameters, I added “bronze_params” as the name and value being a dynamic content but this time using an activity output called “Bronze Notebook” 
 
-![image.png](image%2089.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2089.png?raw=true)
 
 I altered the default activity output for the bronze notebook. 
 
-![image.png](image%2090.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2090.png?raw=true)
 
 with this 
 
 `@string(activity('Bronze Notebook').output.runOutput)`
 
-![image.png](image%2091.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2091.png?raw=true)
 
 Then I did the same with the gold notebook, with bronze_params and silver_params
 
-![image.png](image%2092.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2092.png?raw=true)
 
 Adding the dynamic content on silver_params as `@string(activity('Silver Notebook').output.runOutput)`
 
-![image.png](image%2093.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2093.png?raw=true)
 
 And the same for bronze_params this the value being the bronze activity output `@string(activity('Bronze Notebook').output.runOutput)`
 
-![image.png](image%2094.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2094.png?raw=true)
 
 All parameters are now passed through. 😎
 
 Afterwards I published my pipeline. (top-left) 
 
-![image.png](image%2095.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2095.png?raw=true)
 
 After publishing the pipeline, I ran a trigger:
 
@@ -515,16 +515,16 @@ After publishing the pipeline, I ran a trigger:
 
 name: Daily Trigger 
 
-![image.png](image%2096.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2096.png?raw=true)
 
 After hitting “ok”, I published the pipeline again to publish that rigger I just created. 
 
-![image.png](image%2097.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2097.png?raw=true)
 
 I ran the trigger there and the to see if the trigger is work and I got this prompt in the top-right saying “Running” which means the trigger was successful. 
 
-![image.png](image%2098.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2098.png?raw=true)
 
 On the prompt which popped up, I click on “View pipeline run” which is a link which sent me to the **monitor** tab in Data factory. The scheduled/Triggered pipeline is now complete. 😎
 
-![image.png](image%2099.png)
+![image.png](https://github.com/DarrenDavy12/Earthquake-Events-and-Risks-Project---Azure-Data-Pipeline---API-Connection-/blob/main/images/image%2099.png?raw=true)
