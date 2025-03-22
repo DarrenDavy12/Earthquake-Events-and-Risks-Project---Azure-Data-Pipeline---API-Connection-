@@ -64,3 +64,57 @@ Overview of created containers.
 ![Image](https://github.com/user-attachments/assets/589c257e-5147-41c5-aaeb-0925d425365a)
 
 ![Image](https://github.com/user-attachments/assets/e5075bc7-d6b1-483c-9fd6-6a2f6441569c)
+
+
+
+Setting Up Synapse Analytics
+Create a Synapse Analytics workspace, choosing the storage account created earlier.
+Create a file system named "synapse-fs" and assign "Storage Blob Data Contributor" role.
+In the security tab, select only Entra ID for authentication.
+Review and create, then wait for deployment.
+
+
+![Image](https://github.com/user-attachments/assets/29d081d1-82ee-41d0-b7d9-d4ee9d5f4811)
+
+
+![Image](https://github.com/user-attachments/assets/778c0e50-7cd4-47e6-852a-f2abc8e3cabe)
+
+
+![Image](https://github.com/user-attachments/assets/9ceb7368-0062-46d5-bc93-d3e5cd4fffd0)
+
+
+![Image](https://github.com/user-attachments/assets/7a2c463e-8597-4175-b093-5ec55f338308)
+
+
+
+Databricks Configuration
+This section details configuring the Databricks environment for data processing, including launching compute instances, creating credentials, and setting up external locations.
+
+Launching Compute Instance
+Launch the Databricks workspace and start a compute instance.
+Select single node, uncheck Photon Acceleration, choose Standard_DS3-v2 (14 GB, 4 Cores).
+Set self-termination after 30 minutes to avoid unnecessary costs, considering cluster spin-up time is around 15 minutes.
+Wait for the cluster to be created.
+
+
+![Image](https://github.com/user-attachments/assets/a75c4a61-f6a5-43ce-8ec7-fabbcee32e83)
+
+
+![Image](https://github.com/user-attachments/assets/377e837d-afcd-450c-beaa-742649a336fb)
+
+
+Creating Credential
+Navigate to Catalog > External Data > Credentials > Create Credential.
+Choose Azure managed identity, name it "earthquakePipeline".
+Find the access connector ID, either by searching in Azure or locating in the Databricks resource under managed identities.
+Paste the ID and create, verifying two credentials are present (default and new).
+
+
+
+![Image](https://github.com/user-attachments/assets/62c24448-aa7e-43d4-b7f4-c4d0b6c4f990)
+
+
+![Image](https://github.com/user-attachments/assets/b31f0ac6-1c8b-4e3a-9ebd-9aa09f74e3a2)
+
+
+![Image](https://github.com/user-attachments/assets/4109d8c1-548b-4e88-9a74-d3c7719deffc)
