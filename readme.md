@@ -171,5 +171,28 @@ Review and assign, ensuring two communications are set up.
 ![Image](https://github.com/user-attachments/assets/2409bc66-7841-4b7f-abf9-02ad9380cd66)
 
 
-![Image](https://github.com/user-attachments/assets/9eea238c-52ac-4276-821f-85556f9eab0c)
+![Image](https://github.com/user-attachments/assets/ee5652d4-5bc8-4422-b66f-84bf39cba827)
+
+
+
+
+Creating Notebooks
+In Databricks workspace, create notebooks for bronze, silver, and gold layers.
+Bronze Notebook: Ingest raw data from the USGS API (API Documentation - Earthquake Catalog), store in Parquet format.
+Silver Notebook: Clean and normalize data, remove duplicates, handle missing values.
+Gold Notebook: Aggregate and enrich data, e.g., add country codes using "reverse_geocoder" package.
+Install required libraries in the cluster, wait 5 minutes for installation.
+
+
+
+
+![Image](https://github.com/user-attachments/assets/3af5a4bb-173a-46f8-968f-bfd3cd9aaf0d)
+
+
+
+![Image](https://github.com/user-attachments/assets/2fc96f8c-2837-4c3a-b584-42d906662601)
+
+
+
+
 
