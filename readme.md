@@ -184,7 +184,7 @@ Gold Notebook: Aggregate and enrich data, e.g., add country codes using "reverse
 Install required libraries in the cluster, wait 5 minutes for installation.
 
 
-
+BRONZE:
 
 ![Image](https://github.com/user-attachments/assets/3af5a4bb-173a-46f8-968f-bfd3cd9aaf0d)
 
@@ -207,4 +207,9 @@ Install required libraries in the cluster, wait 5 minutes for installation.
 
 
 ![Image](https://github.com/user-attachments/assets/a77a39e5-a1ff-4f1b-9b1d-5b25893e70b5)
+
+
+
+
+SILVER: 
 
