@@ -158,10 +158,19 @@ Assign to managed identity "unity-catalog-access-connector", pasting the resourc
 Review and assign, ensuring two communications are set up.
 
 
-![Image](https://github.com/user-attachments/assets/8fef7a17-ae32-4138-aeca-2b73b03f6fdd)
+
+![Image](https://github.com/user-attachments/assets/afba8bf1-231b-4be8-bffb-01aef38c4ee5)
+
+
+![Image](https://github.com/user-attachments/assets/fe610b1c-5389-47f5-8a99-82fd2eb433be)
+
+
+![Image](https://github.com/user-attachments/assets/cad399ab-079e-4c82-8b1b-9a5c5d3f2a4e)
+
+
+![Image](https://github.com/user-attachments/assets/2409bc66-7841-4b7f-abf9-02ad9380cd66)
 
 
 
-
-
+![Image](https://github.com/user-attachments/assets/9eea238c-52ac-4276-821f-85556f9eab0c)
 
