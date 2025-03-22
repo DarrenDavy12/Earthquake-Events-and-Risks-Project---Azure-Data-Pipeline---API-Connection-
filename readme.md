@@ -171,6 +171,5 @@ Review and assign, ensuring two communications are set up.
 ![Image](https://github.com/user-attachments/assets/2409bc66-7841-4b7f-abf9-02ad9380cd66)
 
 
-
 ![Image](https://github.com/user-attachments/assets/9eea238c-52ac-4276-821f-85556f9eab0c)
 
