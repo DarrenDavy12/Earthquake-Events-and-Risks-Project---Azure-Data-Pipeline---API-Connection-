@@ -44,16 +44,16 @@ Note the additional resource group managed by Databricks.
 ![Image](https://github.com/user-attachments/assets/d31be78a-a5e3-4851-ade3-bb443995d67a)
 
 
+Creating Containers
+Navigate to the containers section in the storage account.
+Create three containers: bronze (raw data for cleaning), silver (clean data for analytics), and gold (enriched data for business use).
+Overview of created containers.
+
 ![Image](https://github.com/user-attachments/assets/e691d321-92ed-4187-bbc8-3ae6d672c409)
 
 
 ![Image](https://github.com/user-attachments/assets/689e24ec-111b-4abd-81fb-7e79585e811b)
 
-
-Creating Containers
-Navigate to the containers section in the storage account.
-Create three containers: bronze (raw data for cleaning), silver (clean data for analytics), and gold (enriched data for business use).
-Overview of created containers.
 
 ![Image](https://github.com/user-attachments/assets/fbdbda5d-0d96-494d-8fae-abed2e5e3efb)
 
