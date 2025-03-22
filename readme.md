@@ -198,3 +198,13 @@ Install required libraries in the cluster, wait 5 minutes for installation.
 
 
 
+![Image](https://github.com/user-attachments/assets/6b8b0a20-19d1-4972-bd13-cdc174ec2385)
+
+
+
+![Image](https://github.com/user-attachments/assets/7df9238c-71f1-4259-815e-34caebd50aca)
+
+
+
+![Image](https://github.com/user-attachments/assets/a77a39e5-a1ff-4f1b-9b1d-5b25893e70b5)
+
