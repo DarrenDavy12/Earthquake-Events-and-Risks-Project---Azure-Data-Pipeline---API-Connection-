@@ -123,3 +123,45 @@ Paste the ID and create, verifying two credentials are present (default and new)
 
 
 ![Image](https://github.com/user-attachments/assets/8c11a6b9-c3bf-4dec-8aaf-0238e93fb018)
+
+
+![Image](https://github.com/user-attachments/assets/be7b4ba8-799b-4948-83d4-0f27562b0a22)
+
+
+Creating External Locations
+Navigate to Catalog > External Data > External Locations > Create External Location.
+Create locations for bronze, silver, and gold, using the URL for each container and the new credential.
+Initially, encounter an error due to empty containers, force update for all.
+Overview of created external locations.
+
+
+![Image](https://github.com/user-attachments/assets/eb636944-642c-48ba-a9cb-19bf58cd11c1)
+
+
+![Image](https://github.com/user-attachments/assets/99e02879-4cdb-46c8-98ed-3ee0614bcd56)
+
+
+![Image](https://github.com/user-attachments/assets/d8c24306-32eb-40a0-bdaf-7c859f5738af)
+
+
+![Image](https://github.com/user-attachments/assets/2a8f4105-4e18-40f8-8362-f25d659ac2d2)
+
+
+
+Notebooks Creation and Execution
+This section covers setting up access for the storage account and creating notebooks for each layer of the medallion architecture.
+
+Setting Up Access for Storage Account
+In the storage account, go to Access Control (IAM) > Role Assignments.
+Add a new role assignment for "Storage Blob Contributor", allowing read, write, and delete access to blob containers.
+Assign to managed identity "unity-catalog-access-connector", pasting the resource ID from Databricks connector.
+Review and assign, ensuring two communications are set up.
+
+
+![Image](https://github.com/user-attachments/assets/8fef7a17-ae32-4138-aeca-2b73b03f6fdd)
+
+
+
+
+
+
