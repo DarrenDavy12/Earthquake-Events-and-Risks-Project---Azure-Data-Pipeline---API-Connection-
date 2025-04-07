@@ -2,14 +2,40 @@
 
 
 
-Ingested data using python within Databricks, to get it from a API endpoint into a bronze layer of an medallion architecture. Azure data lake storage container within a storage account. Then used Databricks to transform the raw data from bronze container into a silver container and then to the gold container to be used directly for business use. I have then brought these notebooks into Azure Data Factory, extracted variables out of the notebook into Data factory and orchestrated the pipeline from Data factory as well.
+Ingested data using python within Databricks, to get it from a API endpoint into a bronze layer of an medallion architecture. 
+Azure data lake storage container within a storage account. 
+
+
+
+Then used Databricks to transform the raw data from bronze container into a silver container,
+and then to the gold container to be used directly for business use. 
+
+
+
+I have then brought these notebooks into Azure Data Factory, 
+extracted variables out of the notebook into Data factory and orchestrated the pipeline from Data factory as well.
+
+
+
 
 Resource Setup
-This section covers the initial setup of necessary Azure resources, divided into creating Databricks workspace, setting up storage account, creating containers, and setting up Synapse Analytics.
+This section covers the initial setup of necessary Azure resources, 
+divided into creating Databricks workspace, 
+setting up storage account, 
+creating containers, 
+and setting up Synapse Analytics.
+
+
+
+
 
 Creating Databricks Workspace
-In Azure, create a new Databricks workspace, choosing the premium pricing tier for this personal project.
-Review and create the resource, then wait for deployment.
+In Azure, create a new Databricks workspace, 
+choosing the premium pricing tier for this personal project.
+Review and create the resource, 
+then wait for deployment.
+
+
 
 ![Image](https://github.com/user-attachments/assets/5b999166-7e7e-4602-8194-310fdcafed36)
 
@@ -22,9 +48,15 @@ Review and create the resource, then wait for deployment.
 
 Setting Up Storage Account
 Create a storage account while the Databricks workspace is deploying.
-In the basics tab, configure settings, and in the advanced tab, enable hierarchical namespace.
-Review and create, then wait for deployment.
+In the basics tab, 
+configure settings, 
+and in the advanced tab, 
+enable hierarchical namespace.
+Review and create, 
+then wait for deployment.
 Note the additional resource group managed by Databricks.
+
+
 
 ![Image](https://github.com/user-attachments/assets/328ac9eb-8720-4e4f-ba8b-3de4cde5f9e6)
 
@@ -44,10 +76,15 @@ Note the additional resource group managed by Databricks.
 ![Image](https://github.com/user-attachments/assets/d31be78a-a5e3-4851-ade3-bb443995d67a)
 
 
+
+
 Creating Containers
 Navigate to the containers section in the storage account.
-Create three containers: bronze (raw data for cleaning), silver (clean data for analytics), and gold (enriched data for business use).
+Create three containers: bronze (raw data for cleaning),
+silver (clean data for analytics), 
+and gold (enriched data for business use).
 Overview of created containers.
+
 
 ![Image](https://github.com/user-attachments/assets/e691d321-92ed-4187-bbc8-3ae6d672c409)
 
@@ -64,6 +101,8 @@ Overview of created containers.
 ![Image](https://github.com/user-attachments/assets/589c257e-5147-41c5-aaeb-0925d425365a)
 
 ![Image](https://github.com/user-attachments/assets/e5075bc7-d6b1-483c-9fd6-6a2f6441569c)
+
+
 
 
 
@@ -87,13 +126,20 @@ Review and create, then wait for deployment.
 
 
 
+
+
 Databricks Configuration
-This section details configuring the Databricks environment for data processing, including launching compute instances, creating credentials, and setting up external locations.
+This section details configuring the Databricks environment for data processing, 
+including launching compute instances,
+creating credentials, 
+and setting up external locations.
 
 Launching Compute Instance
 Launch the Databricks workspace and start a compute instance.
-Select single node, uncheck Photon Acceleration, choose Standard_DS3-v2 (14 GB, 4 Cores).
-Set self-termination after 30 minutes to avoid unnecessary costs, considering cluster spin-up time is around 15 minutes.
+Select single node, uncheck Photon Acceleration, 
+choose Standard_DS3-v2 (14 GB, 4 Cores).
+Set self-termination after 30 minutes to avoid unnecessary costs, 
+considering cluster spin-up time is around 15 minutes.
 Wait for the cluster to be created.
 
 
@@ -103,11 +149,16 @@ Wait for the cluster to be created.
 ![Image](https://github.com/user-attachments/assets/377e837d-afcd-450c-beaa-742649a336fb)
 
 
+
+
+
 Creating Credential
 Navigate to Catalog > External Data > Credentials > Create Credential.
 Choose Azure managed identity, name it "earthquakePipeline".
-Find the access connector ID, either by searching in Azure or locating in the Databricks resource under managed identities.
-Paste the ID and create, verifying two credentials are present (default and new).
+Find the access connector ID,
+either by searching in Azure or locating in the Databricks resource under managed identities.
+Paste the ID and create, 
+verifying two credentials are present (default and new).
 
 
 
@@ -128,10 +179,15 @@ Paste the ID and create, verifying two credentials are present (default and new)
 ![Image](https://github.com/user-attachments/assets/be7b4ba8-799b-4948-83d4-0f27562b0a22)
 
 
+
+
+
 Creating External Locations
 Navigate to Catalog > External Data > External Locations > Create External Location.
-Create locations for bronze, silver, and gold, using the URL for each container and the new credential.
-Initially, encounter an error due to empty containers, force update for all.
+Create locations for bronze, silver, and gold, 
+using the URL for each container and the new credential.
+Initially, encounter an error due to empty containers, 
+force update for all.
 Overview of created external locations.
 
 
@@ -148,13 +204,18 @@ Overview of created external locations.
 
 
 
+
+
 Notebooks Creation and Execution
-This section covers setting up access for the storage account and creating notebooks for each layer of the medallion architecture.
+This section covers setting up access for the storage account, 
+and creating notebooks for each layer of the medallion architecture.
 
 Setting Up Access for Storage Account
 In the storage account, go to Access Control (IAM) > Role Assignments.
-Add a new role assignment for "Storage Blob Contributor", allowing read, write, and delete access to blob containers.
-Assign to managed identity "unity-catalog-access-connector", pasting the resource ID from Databricks connector.
+Add a new role assignment for "Storage Blob Contributor", 
+allowing read, write, and delete access to blob containers.
+Assign to managed identity "unity-catalog-access-connector", 
+pasting the resource ID from Databricks connector.
 Review and assign, ensuring two communications are set up.
 
 
@@ -178,8 +239,10 @@ Review and assign, ensuring two communications are set up.
 
 Creating Notebooks
 In Databricks workspace, create notebooks for bronze, silver, and gold layers.
-Bronze Notebook: Ingest raw data from the USGS API (API Documentation - Earthquake Catalog), store in Parquet format.
-Silver Notebook: Clean and normalize data, remove duplicates, handle missing values.
+Bronze Notebook: Ingest raw data from the USGS API (API Documentation - Earthquake Catalog), 
+store in Parquet format.
+Silver Notebook: Clean and normalize data, remove duplicates, 
+handle missing values.
 Gold Notebook: Aggregate and enrich data, e.g., add country codes using "reverse_geocoder" package.
 Install required libraries in the cluster, wait 5 minutes for installation.
 
